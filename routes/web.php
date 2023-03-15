@@ -43,6 +43,8 @@ Route::resource('tunggakan', TunggakanController::class);
 Route::get('/exportexcel', [PembayaranController::class, 'exportexcel'])->middleware(['auth'])->name('exportexcel');
 Route::get('/struk', [LaporanController::class, 'struk'])->middleware(['auth'])->name('struk');
 Route::post('/siswa/import_excel', 'SiswaController@import_excel');
+Route::get('/laporan/exportpdf', [LaporanController::class, 'cetak']);
+
 
 // Auth::routes(); 
 // route untuk logout

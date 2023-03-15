@@ -94,25 +94,22 @@
                         <tr>
                             <th>No</th>
                             <th>Nis</th>
+                            <th>Nama</th>
+                            <th>Kelas</th>
                             <th>Bulan Nunggak</th>
-                            {{-- <th>Sisa Nunggak</th> --}}
-                            {{-- <th>Sisa Bulan</th> --}}
                             <th>Total Tunggakan</th>
                             <th width="112px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($tunggakans as $tunggakan)
-                        {{-- {{dd($siswa)}} --}}
                             <tr>
                                 <td>{{ ++$i }}</td>
                                 <td>{{ $tunggakan->id_siswa}}</td>
-                                <td>{{ $tunggakan->sisa_bulan }}</td>
+                                <td>{{ $tunggakan->nama_siswa}}</td>
+                                <td>{{ $tunggakan->nama_kelas}}</td>
+                                <td>{{ $tunggakan->sisa_bulan }}Bulan</td>
                                 <td>{{ $tunggakan->total_tunggakan }}</td>
-                                {{-- <td>{{ $tunggakan->sisa_bulan }}</td> --}}
-                                {{-- <td>Rp.{{ $tunggakan->total_tunggakan }}</td> --}}
-                                {{-- <td>{{ $tunggakan->sisa_tunggakan }}</td> --}}
-                               
                                 <td>
                                     <form action="{{ route('tunggakan.destroy',$tunggakan->id) }}" method="POST">
                                         <a class="btn btn-primary" href="{{ route('tunggakan.edit',$tunggakan->id) }}">

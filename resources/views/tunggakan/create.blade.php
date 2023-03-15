@@ -59,52 +59,38 @@
                 </select>
             </div>
         </div>
-        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nama</strong>
-                <select name="id_siswa" id="" class="form-control">
+                <select name="nama_siswa" id="" class="form-control">
                    
                     @foreach($nama as $row)
-                        <option {{ $row->nama == old('id_siswa') ? 'selected' : '' }} value="{{$row->nama}}">
+                        <option {{ $row->nama == old('nama_siswa') ? 'selected' : '' }} value="{{$row->nama}}">
                         {{ $row->nama}}
                         </option>
                     @endforeach
                 </select>
             </div>
-            
-        </div> --}}
-        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Kelas</strong>
-                <select name="id_siswa" id="" class="form-control">
+                <select name="nama_kelas" id="" class="form-control">
                    
-                    @foreach($kelas as $row)
-                        <option {{ $row->nama_kelas == old('id_siswa') ? 'selected' : '' }} value="{{$row->nama_kelas}}">
-                        {{ $row->nama_kelas}}
+                    @foreach($nama as $row)
+                        <option {{ $row->id_kelas == old('nama_kelas') ? 'selected' : '' }} value="{{$row->id_kelas}}">
+                        {{ $row->id_kelas}}
                         </option>
                     @endforeach
                 </select>
             </div>
-            
-        </div> --}}
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Bulan Nunggak</strong>
                 <input class="form-control" type="text" name="bulan" placeholder="Isi bulan nunggak">          
             </div>
         </div>
-        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Sisa Tunggakan</strong>
-                <input class="form-control" type="text" name="sisa_tunggakan" placeholder="isi sisa tunggakan">          
-            </div>
-        </div> --}}
-        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Sisa Bulan</strong>
-                <input class="form-control" type="text" name="sisa_bulan" placeholder="Isi sisa bulan">          
-            </div>
-        </div> --}}
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Total Tunggakan</strong>

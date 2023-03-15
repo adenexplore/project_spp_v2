@@ -81,7 +81,7 @@
         <td>&nbsp;&nbsp;&nbsp;</td>
         <td>:</td>
         <td>&nbsp;&nbsp;&nbsp;</td>
-        <td>{{ $laporan->tunggakan}}</td>
+        <td>{{ $laporan->tunggakan}} Bulan</td>
     </tr>
     <tr>
         <td><b>Id Spp</b></td>

@@ -28,11 +28,12 @@ class TunggakanController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        $tunggakan = Tunggakan::all();
         $nama = Siswa::all();
         // $kelas = Kelas::all();
 
-        return view('tunggakan.create', compact('nama',));
+        return view('tunggakan.create', compact('nama','tunggakan'));
     }
 
     /**
@@ -58,6 +59,8 @@ class TunggakanController extends Controller
         //     ->with('success', 'Berhasil Menyimpan !');
         $validatedData = $request->validate([
             'id_siswa' => ['required', 'string'],
+            'nama_siswa' => ['required', 'string'],
+            'nama_kelas' => ['required', 'string'],
             'bulan' => ['required', 'string'],
             'total_tunggakan' => ['required', 'string'],
         ]);
@@ -104,18 +107,17 @@ class TunggakanController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id_siswa' => 'required',
-            'bulan' => 'required',
-            'total_tunggakan' => 'required',
-            'sisa_tunggakan' => 'required',
-            'sisa_bulan' => 'required',
+            'id_siswa' => ['required', 'string'],
+            'nama_siswa' => ['required', 'string'],
+            'nama_kelas' => ['required', 'string'],
+            'bulan' => ['required', 'string'],
+            'total_tunggakan' => ['required', 'string'],
         ]);
-
-
-        //
-        Tunggakan::find($id)->update($request->all());
+        $validatedData['sisa_bulan'] = $request->bulan;
+        $validatedData['sisa_tunggakan'] = $request->total_tunggakan;
+        Tunggakan::create( $validatedData );
         return redirect()->route('tunggakan.index')
-            ->with('success', 'Berhasil Di Edit !');
+            ->with('success', 'Berhasil Di edit !');
     }
 
     /**

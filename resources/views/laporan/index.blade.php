@@ -27,6 +27,7 @@
             <hr>
             <div class="pull-right" style="float: left;">
                 <a class="btn btn-success" href="/exportexcel">Export  <i class="fa-sharp fa-solid fa-file-export"></i></a>
+                <a class="btn btn-primary" href="/exportpdf">Export  <i class="fa-sharp fa-solid fa-file-export"></i></a>
             </div>
         </div>
     </div>
@@ -67,7 +68,7 @@
                                 <td>{{ $laporan->tgl_bayar}}</td>
                                 <td>{{ $laporan->bulan_dibayar }}</td>
                                 <td>{{ $laporan->tahun_dibayar }}</td>
-                                <td>{{ $laporan->tunggakan}}</td>
+                                <td>{{ $laporan->tunggakan}} Bulan</td>
                                 <td>{{ $laporan->id_spp }}</td>
                                 <td>{{ $laporan->jumlah_bayar }}</td>
                                 <td>

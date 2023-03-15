@@ -71,7 +71,7 @@
                                 <td>{{ $pembayaran->bulan_dibayar }}</td>
                                 <td>{{ $pembayaran->tahun_dibayar }}</td>
                                 <td>Rp.{{ $pembayaran->id_spp }}</td>
-                                <td>{{ $pembayaran->tunggakan }}</td>
+                                <td>{{ $pembayaran->tunggakan }} Bulan</td>
                                 <td>Rp.{{$pembayaran->jumlah_bayar }}</td>
                                 <td>
                                     <form action="{{ route('pembayaran.destroy',$pembayaran->id) }}" method="POST">

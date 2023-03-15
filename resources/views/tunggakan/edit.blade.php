@@ -49,7 +49,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nisn</strong>
+                <strong>Nis</strong>
                 <select name="id_siswa" id="" class="form-control" >
                     <option selected >{{$tunggakan->id_siswa}}</option>
                     @foreach($nama as $row)
@@ -57,7 +57,34 @@
                         {{ $row->nis}}
                         </option>
                     @endforeach
-                </select>            </div>
+                </select>            
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nama</strong>
+                <select name="nama_siswa" id="" class="form-control" >
+                    <option selected >{{$tunggakan->nama_siswa}}</option>
+                    @foreach($nama as $row)
+                        <option {{ $row->id== old('nis', $tunggakan->id)  ? 'selected' : '' }} value="{{$row->id}}">
+                        {{ $row->nama}}
+                        </option>
+                    @endforeach
+                </select>            
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Kelas</strong>
+                <select name="nama_kelas" id="" class="form-control" >
+                    <option selected >{{$tunggakan->nama_kelas}}</option>
+                    @foreach($kelas as $row)
+                        <option {{ $row->id== old('nis', $tunggakan->id)  ? 'selected' : '' }} value="{{$row->id}}">
+                        {{ $row->id_kelas}}
+                        </option>
+                    @endforeach
+                </select>            
+            </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -65,7 +92,7 @@
                 <input class="form-control" type="text" name="bulan" value="{{$tunggakan->bulan}}">          
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Sisa Tunggakan</strong>
                 <input class="form-control" type="text" name="sisa_tunggakan"  value="{{$tunggakan->sisa_tunggakan}}">          
@@ -76,10 +103,10 @@
                 <strong>Sisa Bulan</strong>
                 <input class="form-control" type="text" name="sisa_bulan"  value="{{$tunggakan->sisa_bulan}}">          
             </div>
-        </div>
+        </div> --}}
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Total Harga</strong>
+                <strong>Total Tunggakan</strong>
                 <input class="form-control" type="text" name="total_tunggakan"  value="{{$tunggakan->total_tunggakan}}">          
             </div>
         </div>
