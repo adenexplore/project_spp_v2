@@ -56,6 +56,7 @@
                             <th>Tunggakan</th>
                             <th>Id Spp</th>
                             <th>Jumlah Bayar</th>
+                            <th>Sisa Tunggakan</th>
                             <th width="112px">Action</th>
                         </tr>
                     </thead>
@@ -68,9 +69,10 @@
                                 <td>{{ $laporan->tgl_bayar}}</td>
                                 <td>{{ $laporan->bulan_dibayar }}</td>
                                 <td>{{ $laporan->tahun_dibayar }}</td>
-                                <td>{{ $laporan->tunggakan}} Bulan</td>
+                                <td>Bulan {{ $laporan->tunggakan}}</td>
                                 <td>{{ $laporan->id_spp }}</td>
                                 <td>{{ $laporan->jumlah_bayar }}</td>
+                                <td>{{ $laporan->sisa_tunggakan }} Bulan</td>
                                 <td>
                                     <a class="btn btn-primary" href="/struk">
                                         <i class="fa-solid fa-file-invoice"> </i>

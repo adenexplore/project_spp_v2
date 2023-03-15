@@ -51,24 +51,16 @@
                 <div class="form-group">
                     <strong>Id Petugas</strong>
                     <input type="text" name="id_petugas"  class="form-control" value="{{ Auth::user()->name }}" >
-                    {{-- <select name="id_petugas" id="" class="form-control" disabled>
-                     
-                        @foreach($petugas as $row)
-                        <option {{ $row->name == old('id_petugas') ? 'selected' : '' }} value="{{$row->name}}">
-                        {{ $row->name }}
-                        </option>
-                        @endforeach
-                    </select>    --}}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nisn</strong>
                 {{-- <input class="form-control" type="number" name="id_spp" placeholder="Isi id spp">           --}}
-                <select name="nisn" id="" class="form-control">
+                <select name="nisn" id="id_nis" class="form-control">
                     <option selected >pilih Nisn Siswa</option>
                     @foreach($siswa as $row)
-                        <option {{ $row->nisn == old('nisn') ? 'selected' : '' }} value="{{$row->nisn}}">
+                        <option data-spp="{{ $row->id_spp }}" data-total="{{ $row->id_spp }}"  {{ $row->nisn == old('nisn') ? 'selected' : '' }} value="{{$row->nisn}}">
                         {{ $row->nisn}}
                         </option>
                     @endforeach
@@ -96,15 +88,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Id Spp</strong>
-                {{-- <input class="form-control" type="number" name="id_spp" placeholder="Isi id spp">           --}}
-                <select name="id_spp" id="" class="form-control">
-                    <option selected >pilih Spp</option>
-                    @foreach($spp as $row)
-                        <option {{ $row->nominal == old('id_spp') ? 'selected' : '' }} value="{{$row->nominal}}">
-                        {{ $row->nominal}}
-                        </option>
-                    @endforeach
-                </select>
+                    <input type="text" name="id_spp" id="spps" class="form-control">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -116,7 +100,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Jumlah Bayar</strong>
-                    <input class="form-control" type="text" name="jumlah_bayar" placeholder="Isi jumlah Bayar">          
+                    <input class="form-control" type="text" name="jumlah_bayar" id="cekbayar" placeholder="Isi jumlah Bayar">          
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Sisa Tunggakan</strong>
+                    <input class="form-control" type="text" name="sisa_tunggakan"  placeholder="Isi Sisa Tunggakan">          
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -126,6 +116,20 @@
     </form>
 </div>
 @endif
+<script>
+    const id_nis = document.querySelector('#id_nis')
+    const spps = document.querySelector('#spps')
+    const cekbayar = document.querySelector('#cekbayar')
+
+    id_nis.addEventListener('change', (e) => {
+        const id_spp = e.target.options[e.target.selectedIndex].getAttribute('data-spp')
+        spps.value = id_spp
+    })
+    id_nis.addEventListener('change', (e) => {
+        const id_spp = e.target.options[e.target.selectedIndex].getAttribute('data-total')
+        cekbayar.value = id_spp
+    })
+</script>
 @endsection
 @section('title')
 Create Bayar

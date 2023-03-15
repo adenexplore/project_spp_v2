@@ -108,8 +108,8 @@
                                 <td>{{ $tunggakan->id_siswa}}</td>
                                 <td>{{ $tunggakan->nama_siswa}}</td>
                                 <td>{{ $tunggakan->nama_kelas}}</td>
-                                <td>{{ $tunggakan->sisa_bulan }}Bulan</td>
-                                <td>{{ $tunggakan->total_tunggakan }}</td>
+                                <td>{{ $tunggakan->sisa_bulan }} bulan</td>
+                                <td>Rp.{{ $tunggakan->total_tunggakan }}</td>
                                 <td>
                                     <form action="{{ route('tunggakan.destroy',$tunggakan->id) }}" method="POST">
                                         <a class="btn btn-primary" href="{{ route('tunggakan.edit',$tunggakan->id) }}">

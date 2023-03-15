@@ -22,6 +22,7 @@ class CreatePembayaranTable extends Migration
             $table->string('tahun_dibayar');
             $table->string('id_spp');
             $table->string('tunggakan');
+            $table->string('sisa_tunggakan');
             $table->string('jumlah_bayar');
 
             $table->timestamps();

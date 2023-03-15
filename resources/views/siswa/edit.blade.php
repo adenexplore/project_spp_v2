@@ -83,7 +83,7 @@
             <div class="form-group">
                 <strong>Tahun Angkatan</strong>
                 {{-- <input class="form-control" type="number" name="id_spp" placeholder="Isi id spp">           --}}
-                <select name="id_spp" id="" class="form-control" >
+                <select name="tahun" id="" class="form-control" >
                     <option selected >{{$siswa->tahun}}</option>
                     @foreach($spp as $row)
                         <option {{ $row->tahun == old('id_spp', $siswa->tahun)  ? 'selected' : '' }} value="{{$row->tahun}}">

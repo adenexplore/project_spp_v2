@@ -58,6 +58,7 @@
                             <th>Id Spp</th>
                             <th>Tunggakan</th>
                             <th>Jumlah Bayar</th>
+                            <th>Sisa Tunggakan</th>
                             <th width="112px">Action</th>
                         </tr>
                     </thead>
@@ -71,8 +72,9 @@
                                 <td>{{ $pembayaran->bulan_dibayar }}</td>
                                 <td>{{ $pembayaran->tahun_dibayar }}</td>
                                 <td>Rp.{{ $pembayaran->id_spp }}</td>
-                                <td>{{ $pembayaran->tunggakan }} Bulan</td>
+                                <td>Bulan {{ $pembayaran->tunggakan }}</td>
                                 <td>Rp.{{$pembayaran->jumlah_bayar }}</td>
+                                <td>{{$pembayaran->sisa_tunggakan }} Bulan</td>
                                 <td>
                                     <form action="{{ route('pembayaran.destroy',$pembayaran->id) }}" method="POST">
                                         <a class="btn btn-primary" href="{{ route('pembayaran.edit',$pembayaran->id) }}">

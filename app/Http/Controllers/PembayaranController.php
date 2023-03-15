@@ -54,6 +54,7 @@ class PembayaranController extends Controller
             'tahun_dibayar' => 'required',
             'id_spp' => 'required',
             'tunggakan' => 'required',
+            'sisa_tunggakan' => 'required',
             'jumlah_bayar' => 'required',
         ]);
         
@@ -105,6 +106,7 @@ class PembayaranController extends Controller
             'tahun_dibayar' => 'required',
             'id_spp' => 'required',
             'tunggakan' => 'required',
+            'sisa_tunggakan' => 'required',
             'jumlah_bayar' => 'required',
         ]);
 

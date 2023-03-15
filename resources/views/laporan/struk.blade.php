@@ -81,7 +81,7 @@
         <td>&nbsp;&nbsp;&nbsp;</td>
         <td>:</td>
         <td>&nbsp;&nbsp;&nbsp;</td>
-        <td>{{ $laporan->tunggakan}} Bulan</td>
+        <td>Bulan {{ $laporan->tunggakan}}</td>
     </tr>
     <tr>
         <td><b>Id Spp</b></td>
@@ -96,6 +96,13 @@
         <td>:</td>
         <td>&nbsp;&nbsp;&nbsp;</td>
         <td>{{ $laporan->jumlah_bayar}}</td>
+    </tr>
+    <tr>
+        <td><b>Sisa Tunggakan</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>:</td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td>{{ $laporan->sisa_tunggakan}} Bulan</td>
     </tr>
    
     @endforeach
