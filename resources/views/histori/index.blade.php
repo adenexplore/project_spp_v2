@@ -30,13 +30,10 @@
                         <tr>
                             <th>No</th>
                             <th>Id Petugas</th>
-                            <th>Nisn</th>
+                            <th>Nis</th>
                             <th>Tgl Bayar</th>
-                            <th>Bulan Dibayar</th>
-                            <th>Tahun Dibayar</th>
                             <th>Id Spp</th>
                             <th>Jumlah Bayar</th>
-                            {{-- <th width="112px">Action</th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -44,24 +41,10 @@
                             <tr>
                                 <td>{{ ++$i }}</td>
                                 <td>{{ $histori->id_petugas }}</td>
-                                <td>{{ $histori->nisn }}</td>
+                                <td>{{ $histori->nis }}</td>
                                 <td>{{ $histori->tgl_bayar}}</td>
-                                <td>{{ $histori->bulan_dibayar }}</td>
-                                <td>{{ $histori->tahun_dibayar }}</td>
                                 <td>Rp.{{ $histori->id_spp }}</td>
-                                <td>Rp.{{ $histori->jumlah_bayar }}</td>
-                                {{-- <td>
-                                    <form action="{{ route('histori.destroy',$histori->id) }}" method="POST">
-                                        <a class="btn btn-primary" href="{{ route('histori.edit',$histori->id) }}">
-                                            <i class="fa-solid fa-pen"> </i>
-                                        </a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">
-                                            <i class="fa-solid fa-trash-can"></i>
-                                        </button>
-                                    </form>
-                                </td> --}}
+                                <td>Rp.{{ $histori->jumlah_dibayar }}</td>
                             </tr>
                         @endforeach
                     </tbody> 

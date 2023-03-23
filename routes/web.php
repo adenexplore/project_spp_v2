@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HistoriController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PembayaranController;
@@ -31,6 +32,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::resource('home_master', HomeController::class);
+
+
 Route::resource('kelas', KelasController::class);
 Route::resource('siswa', SiswaController::class);
 Route::resource('petugas', UserController::class);
@@ -41,9 +45,11 @@ Route::resource('histori', HistoriController::class);
 Route::resource('tunggakan', TunggakanController::class);
 
 Route::get('/exportexcel', [PembayaranController::class, 'exportexcel'])->middleware(['auth'])->name('exportexcel');
-Route::get('/struk', [LaporanController::class, 'struk'])->middleware(['auth'])->name('struk');
+Route::get('/struk/{id}', [LaporanController::class, 'struk'])->middleware(['auth'])->name('struk');
 Route::post('/siswa/import_excel', 'SiswaController@import_excel');
-Route::get('/laporan/exportpdf', [LaporanController::class, 'cetak']);
+// Route::get('/laporan/exportpdf', [LaporanController::class, 'cetak']);
+Route::get('/exportpdf', [LaporanController::class, 'exportpdf'])->middleware(['auth'])->name('exportpdf');
+
 
 
 // Auth::routes(); 

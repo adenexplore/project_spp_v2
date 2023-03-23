@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="{{ request()->is(strtolower(Auth::user()->role)) ? 'active' : '' }} nav-item">
-                <a class="nav-link" href="/dashboard">
+                <a class="nav-link" href="/home_master">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard {{ Auth::user()->role }}</span></a>
             </li>
@@ -97,7 +97,7 @@
                     <span>Laporan Spp</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" hidden>
                 <a class="nav-link collapsed" href="/tunggakan">
                     <i class="fa-solid fa-money-check"></i>
                     <span>Tunggakan Spp</span>
@@ -234,6 +234,17 @@
         var bulanarray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember");
         document.getElementById("tanggalwaktu").innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun+" Jam " + ((tw.getHours() < 10) ? "0" : "") + tw.getHours() + ":" + ((tw.getMinutes() < 10)? "0" : "") + tw.getMinutes() + (" W.I.B ");
         </script>
+        <script>
+            var tw = new Date();
+            if (tw.getTimezoneOffset() == 0) (a=tw.getTime() + ( 7 *60*60*1000))
+            var tahun= tw.getFullYear ();
+            // var hari= tw.getDay ();
+            // var bulan= tw.getMonth ();
+            // var tanggal= tw.getDate ();
+            // var hariarray=new Array("Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jum'at,","Sabtu,");
+            // var bulanarray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember");
+            document.getElementById("waktu").innerHTML = tahun;
+            </script>
 </body>
 
 </html>

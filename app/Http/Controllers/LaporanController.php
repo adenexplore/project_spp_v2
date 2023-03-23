@@ -85,20 +85,19 @@ class LaporanController extends Controller
     {
         //
     }
-    public function struk() 
+    public function struk($id) 
     {
-        $laporans = Pembayaran::orderBy('created_at', 'desc')->get();
+        
+        $laporans = Pembayaran::find($id);
+        // return $laporans;
         return view('laporan.struk', compact('laporans'));
     }
 
-    public function exportpdf()
+    public function exportpdf() 
     {
-        // $data = PDF::loadview('laporan_pdf', ['data' => 'ini adalah contoh laporan PDF']);
-        // //mendownload laporan.pdf
-    	// return $data->download('laporan.pdf');
-        // $laporans = Laporan::all();
- 
-        // $pdf = PDF::loadview('laporan.cetak', ['laporan' => $laporans ]);
-        // return $pdf->download('laporan.pdf');
+        
+        $laporans = Pembayaran::orderBy('created_at', 'desc')->get();
+        // return $laporans;
+        return view('laporan.print', compact('laporans'));
     }
 }

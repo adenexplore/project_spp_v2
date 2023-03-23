@@ -16,15 +16,12 @@ class CreatePembayaranTable extends Migration
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
             $table->string('id_petugas');
-            $table->string('nisn');
-            $table->integer('tgl_bayar');
-            $table->string('bulan_dibayar');
-            $table->string('tahun_dibayar');
+            $table->string('nis');
+            $table->string('nama');
+            $table->date('tgl_bayar');
             $table->string('id_spp');
-            $table->string('tunggakan');
-            $table->string('sisa_tunggakan');
-            $table->string('jumlah_bayar');
-
+            $table->string('tunggakan_bulan');
+            $table->string('jumlah_dibayar');
             $table->timestamps();
         });
     }

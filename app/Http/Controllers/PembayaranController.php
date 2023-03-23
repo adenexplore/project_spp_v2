@@ -48,14 +48,12 @@ class PembayaranController extends Controller
             // dd($request->all());
         $request->validate([
             'id_petugas' => 'required',
-            'nisn' => 'required',
+            'nis' => 'required',
+            'nama' => 'required',
             'tgl_bayar' => 'required',
-            'bulan_dibayar' => 'required',
-            'tahun_dibayar' => 'required',
             'id_spp' => 'required',
-            'tunggakan' => 'required',
-            'sisa_tunggakan' => 'required',
-            'jumlah_bayar' => 'required',
+            'tunggakan_bulan' => 'required',
+            'jumlah_dibayar' => 'required',
         ]);
         
         Pembayaran::create($request->all());
@@ -83,10 +81,10 @@ class PembayaranController extends Controller
      */
     public function edit(Pembayaran $pembayaran)
     {
-        // $petugas = User::all();
-        // $spp = spp::find($id);
+        $siswa = Siswa::all();
+        $petugas = User::all();
         $spp = Spp::all();
-        return view('pembayaran.edit', compact('spp','pembayaran'));
+        return view('pembayaran.edit', compact('siswa','petugas','spp','pembayaran'));
     }
 
     /**
@@ -100,14 +98,12 @@ class PembayaranController extends Controller
     {
         $request->validate([
             'id_petugas' => 'required',
-            'nisn' => 'required',
+            'nis' => 'required',
+            'nama' => 'required',
             'tgl_bayar' => 'required',
-            'bulan_dibayar' => 'required',
-            'tahun_dibayar' => 'required',
             'id_spp' => 'required',
-            'tunggakan' => 'required',
-            'sisa_tunggakan' => 'required',
-            'jumlah_bayar' => 'required',
+            'tunggakan_bulan' => 'required',
+            'jumlah_dibayar' => 'required',
         ]);
 
         Pembayaran::find($id)->update($request->all());
